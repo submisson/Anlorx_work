@@ -1,0 +1,36 @@
+<?xml version="1.0"?><robot xmlns:xacro="http://ros.org/wiki/xacro"><xacro:macro name="sensor_kit_macro" params="parent x y z roll pitch yaw">
+<link name="sensor_kit_base_link"/>
+<joint name="sensor_kit_base_joint" type="fixed"><parent link="${parent}"/><child link="sensor_kit_base_link"/><origin xyz="${x} ${y} ${z}" rpy="${roll} ${pitch} ${yaw}"/></joint>
+<link name="velodyne_top_base_link"><visual><origin rpy="0 0 0.0000000000"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/sensor_lidar_top.dae"/></geometry></visual></link>
+<joint name="lidar_top_mount_joint" type="fixed"><parent link="sensor_kit_base_link"/><child link="velodyne_top_base_link"/><origin xyz="0.6082500000 0.4400000000 1.8650000000" rpy="0.0000000000 0.0000000000 0.0000000000"/></joint>
+<link name="velodyne_top"/>
+<joint name="velodyne_top_joint" type="fixed"><parent link="velodyne_top_base_link"/><child link="velodyne_top"/></joint>
+<link name="CAM_FRONT/camera_link"><visual><origin rpy="0 0 0.0000000000"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/sensor_CAM_FRONT.dae"/></geometry></visual></link>
+<joint name="CAM_FRONT_mount_joint" type="fixed"><parent link="sensor_kit_base_link"/><child link="CAM_FRONT/camera_link"/><origin xyz="1.5932500000 0.4300000000 1.7550000000" rpy="0.0000000000 0.0000000000 0.0000000000"/></joint>
+<link name="CAM_FRONT/camera_optical_link"/>
+<joint name="CAM_FRONT_optical_joint" type="fixed"><parent link="CAM_FRONT/camera_link"/><child link="CAM_FRONT/camera_optical_link"/><origin rpy="-1.5707963267948966 0 -1.5707963267948966"/></joint>
+<link name="CAM_FRONT_LEFT/camera_link"><visual><origin rpy="0 0 -0.9599310886"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/sensor_CAM_FRONT_LEFT.dae"/></geometry></visual></link>
+<joint name="CAM_FRONT_LEFT_mount_joint" type="fixed"><parent link="sensor_kit_base_link"/><child link="CAM_FRONT_LEFT/camera_link"/><origin xyz="1.4382500000 0.5650000000 1.7550000000" rpy="0.0000000000 0.0000000000 0.9599310886"/></joint>
+<link name="CAM_FRONT_LEFT/camera_optical_link"/>
+<joint name="CAM_FRONT_LEFT_optical_joint" type="fixed"><parent link="CAM_FRONT_LEFT/camera_link"/><child link="CAM_FRONT_LEFT/camera_optical_link"/><origin rpy="-1.5707963267948966 0 -1.5707963267948966"/></joint>
+<link name="CAM_FRONT_RIGHT/camera_link"><visual><origin rpy="0 0 0.9599310886"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/sensor_CAM_FRONT_RIGHT.dae"/></geometry></visual></link>
+<joint name="CAM_FRONT_RIGHT_mount_joint" type="fixed"><parent link="sensor_kit_base_link"/><child link="CAM_FRONT_RIGHT/camera_link"/><origin xyz="1.5932500000 0.3100000000 1.7550000000" rpy="0.0000000000 0.0000000000 -0.9599310886"/></joint>
+<link name="CAM_FRONT_RIGHT/camera_optical_link"/>
+<joint name="CAM_FRONT_RIGHT_optical_joint" type="fixed"><parent link="CAM_FRONT_RIGHT/camera_link"/><child link="CAM_FRONT_RIGHT/camera_optical_link"/><origin rpy="-1.5707963267948966 0 -1.5707963267948966"/></joint>
+<link name="CAM_BACK/camera_link"><visual><origin rpy="0 0 -3.1415926536"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/sensor_CAM_BACK.dae"/></geometry></visual></link>
+<joint name="CAM_BACK_mount_joint" type="fixed"><parent link="sensor_kit_base_link"/><child link="CAM_BACK/camera_link"/><origin xyz="-0.3767500000 0.4300000000 1.7550000000" rpy="0.0000000000 0.0000000000 3.1415926536"/></joint>
+<link name="CAM_BACK/camera_optical_link"/>
+<joint name="CAM_BACK_optical_joint" type="fixed"><parent link="CAM_BACK/camera_link"/><child link="CAM_BACK/camera_optical_link"/><origin rpy="-1.5707963267948966 0 -1.5707963267948966"/></joint>
+<link name="CAM_BACK_LEFT/camera_link"><visual><origin rpy="0 0 -2.1816615650"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/sensor_CAM_BACK_LEFT.dae"/></geometry></visual></link>
+<joint name="CAM_BACK_LEFT_mount_joint" type="fixed"><parent link="sensor_kit_base_link"/><child link="CAM_BACK_LEFT/camera_link"/><origin xyz="-0.2217500000 0.5650000000 1.7550000000" rpy="0.0000000000 0.0000000000 2.1816615650"/></joint>
+<link name="CAM_BACK_LEFT/camera_optical_link"/>
+<joint name="CAM_BACK_LEFT_optical_joint" type="fixed"><parent link="CAM_BACK_LEFT/camera_link"/><child link="CAM_BACK_LEFT/camera_optical_link"/><origin rpy="-1.5707963267948966 0 -1.5707963267948966"/></joint>
+<link name="CAM_BACK_RIGHT/camera_link"><visual><origin rpy="0 0 2.1816615650"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/sensor_CAM_BACK_RIGHT.dae"/></geometry></visual></link>
+<joint name="CAM_BACK_RIGHT_mount_joint" type="fixed"><parent link="sensor_kit_base_link"/><child link="CAM_BACK_RIGHT/camera_link"/><origin xyz="-0.3767500000 0.3100000000 1.7550000000" rpy="0.0000000000 0.0000000000 -2.1816615650"/></joint>
+<link name="CAM_BACK_RIGHT/camera_optical_link"/>
+<joint name="CAM_BACK_RIGHT_optical_joint" type="fixed"><parent link="CAM_BACK_RIGHT/camera_link"/><child link="CAM_BACK_RIGHT/camera_optical_link"/><origin rpy="-1.5707963267948966 0 -1.5707963267948966"/></joint>
+<link name="tamagawa/imu_link"><visual><origin rpy="0 0 0.0000000000"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/sensor_imu.dae"/></geometry></visual></link>
+<joint name="imu_mount_joint" type="fixed"><parent link="sensor_kit_base_link"/><child link="tamagawa/imu_link"/><origin xyz="0.6082500000 0.4400000000 0.6000000000" rpy="0.0000000000 0.0000000000 0.0000000000"/></joint>
+<link name="gnss_link"><visual><origin rpy="0 0 0.0000000000"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/sensor_gnss.dae"/></geometry></visual></link>
+<joint name="gnss_mount_joint" type="fixed"><parent link="sensor_kit_base_link"/><child link="gnss_link"/><origin xyz="0.8282500000 0.4400000000 1.7600000000" rpy="0.0000000000 0.0000000000 0.0000000000"/></joint>
+</xacro:macro></robot>

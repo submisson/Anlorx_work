@@ -1,0 +1,33 @@
+autoware_system_design_format: 0.4.0
+
+name: Feeder.node
+
+description: Dummy feeder publishing the duo input at a tunable rate.
+
+package:
+  name: tuned_pkg
+  provider: dummy
+
+launch:
+  plugin: tuned::Feeder
+  executable: feeder_node
+  node_output: screen
+
+subscribers: []
+
+publishers:
+  - name: output
+    message_type: std_msgs/msg/String
+
+param_files: []
+param_values:
+  - name: rate_hz
+    type: double
+    default: 10.0
+
+processes:
+  - name: feed
+    trigger_conditions:
+      - periodic: ${parameter rate_hz}
+    outcomes:
+      - to_output: output

@@ -1,0 +1,5 @@
+four_ws:
+  max_wheel_speed_m_s: 1.5
+  max_steer_rad: 1.5707963267948966
+  max_steer_rate_rad_s: 1.0
+  note: provisional low-speed visualization values; no motor/tyre identification

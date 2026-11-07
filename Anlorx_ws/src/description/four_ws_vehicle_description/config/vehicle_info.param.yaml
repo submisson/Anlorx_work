@@ -1,0 +1,15 @@
+# CAD-derived loaded envelope, SI units. base_link: rear axle on ground.
+# max_steer_angle=0.70 is a PROVISIONAL front-steer bicycle limit for stock Autoware.
+# Independent 4WS has a separate +/-pi/2 simulation limit in vehicle_geometry.json.
+/**:
+  ros__parameters:
+    wheel_radius: 0.175
+    wheel_width: 0.1
+    wheel_base: 1.2165
+    wheel_tread: 0.68
+    front_overhang: 0.7335024240553252
+    rear_overhang: 0.7299975759446751
+    left_overhang: 0.25667496053031696
+    right_overhang: 0.4023940091962455
+    vehicle_height: 1.9025
+    max_steer_angle: 0.7

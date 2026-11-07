@@ -1,0 +1,66 @@
+# NEW DESIGN, not measured calibration. ROS FLU: x forward, y LEFT, z up; radians.
+# All positions are relative to rear-axle-ground base_link / coincident sensor_kit_base_link.
+sensor_kit_base_link:
+  velodyne_top_base_link:
+    x: 0.60825
+    y: 0.44
+    z: 1.865
+    roll: 0
+    pitch: 0
+    yaw: 0
+  CAM_FRONT/camera_link:
+    x: 1.5932499999999998
+    y: 0.43
+    z: 1.755
+    roll: 0
+    pitch: 0
+    yaw: 0
+  CAM_FRONT_LEFT/camera_link:
+    x: 1.43825
+    y: 0.565
+    z: 1.755
+    roll: 0
+    pitch: 0
+    yaw: 0.9599310885968813
+  CAM_FRONT_RIGHT/camera_link:
+    x: 1.5932499999999998
+    y: 0.31
+    z: 1.755
+    roll: 0
+    pitch: 0
+    yaw: -0.9599310885968813
+  CAM_BACK/camera_link:
+    x: -0.37675000000000003
+    y: 0.43
+    z: 1.755
+    roll: 0
+    pitch: 0
+    yaw: 3.141592653589793
+  CAM_BACK_LEFT/camera_link:
+    x: -0.22175
+    y: 0.565
+    z: 1.755
+    roll: 0
+    pitch: 0
+    yaw: 2.181661564992912
+  CAM_BACK_RIGHT/camera_link:
+    x: -0.37675000000000003
+    y: 0.31
+    z: 1.755
+    roll: 0
+    pitch: 0
+    yaw: -2.181661564992912
+  tamagawa/imu_link:
+    x: 0.60825
+    y: 0.44
+    z: 0.6
+    roll: 0
+    pitch: 0
+    yaw: 0
+  gnss_link:
+    x: 0.8282499999999999
+    y: 0.44
+    z: 1.76
+    roll: 0
+    pitch: 0
+    yaw: 0

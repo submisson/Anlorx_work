@@ -1,0 +1,1 @@
+<?xml version="1.0"?><robot xmlns:xacro="http://ros.org/wiki/xacro"><xacro:include filename="sensor_kit.xacro"/><xacro:sensor_kit_macro parent="base_link" x="0" y="0" z="0" roll="0" pitch="0" yaw="0"/></robot>

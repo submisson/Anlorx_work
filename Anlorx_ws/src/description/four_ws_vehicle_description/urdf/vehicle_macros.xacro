@@ -1,0 +1,32 @@
+<?xml version="1.0"?><robot xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:macro name="four_ws_vehicle" params="articulated:=false">
+<link name="base_link"><visual><origin xyz="0.60825 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/chassis.dae"/></geometry></visual></link>
+<link name="susp_FL"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/susp_FL.dae"/></geometry></visual></link>
+<joint name="susp_FL_joint" type="fixed"><parent link="base_link"/><child link="susp_FL"/><origin xyz="1.2165000000 0.3401480440 0.4055000000"/></joint>
+<link name="steer_FL"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/steer_FL.dae"/></geometry></visual></link>
+<joint name="steer_FL_joint" type="${'revolute' if articulated else 'fixed'}"><parent link="susp_FL"/><child link="steer_FL"/><origin xyz="0 0 0"/><axis xyz="0 0 1"/><limit lower="-1.5707963267948966" upper="1.5707963267948966" effort="1" velocity="1.0"/></joint>
+<link name="wheel_FL"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/wheel_FL.dae"/></geometry></visual></link>
+<joint name="wheel_FL_joint" type="${'continuous' if articulated else 'fixed'}"><parent link="steer_FL"/><child link="wheel_FL"/><origin xyz="0.0000000000 0.0030000000 -0.2305000000"/><axis xyz="0 1 0"/></joint>
+<link name="susp_FR"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/susp_FR.dae"/></geometry></visual></link>
+<joint name="susp_FR_joint" type="fixed"><parent link="base_link"/><child link="susp_FR"/><origin xyz="1.2165000000 -0.3398519560 0.4055000000"/></joint>
+<link name="steer_FR"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/steer_FR.dae"/></geometry></visual></link>
+<joint name="steer_FR_joint" type="${'revolute' if articulated else 'fixed'}"><parent link="susp_FR"/><child link="steer_FR"/><origin xyz="0 0 0"/><axis xyz="0 0 1"/><limit lower="-1.5707963267948966" upper="1.5707963267948966" effort="1" velocity="1.0"/></joint>
+<link name="wheel_FR"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/wheel_FR.dae"/></geometry></visual></link>
+<joint name="wheel_FR_joint" type="${'continuous' if articulated else 'fixed'}"><parent link="steer_FR"/><child link="wheel_FR"/><origin xyz="0.0000000000 0.0030000000 -0.2305000000"/><axis xyz="0 1 0"/></joint>
+<link name="susp_RL"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/susp_RL.dae"/></geometry></visual></link>
+<joint name="susp_RL_joint" type="fixed"><parent link="base_link"/><child link="susp_RL"/><origin xyz="0.0000000000 0.3398519560 0.4055000000"/></joint>
+<link name="steer_RL"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/steer_RL.dae"/></geometry></visual></link>
+<joint name="steer_RL_joint" type="${'revolute' if articulated else 'fixed'}"><parent link="susp_RL"/><child link="steer_RL"/><origin xyz="0 0 0"/><axis xyz="0 0 1"/><limit lower="-1.5707963267948966" upper="1.5707963267948966" effort="1" velocity="1.0"/></joint>
+<link name="wheel_RL"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/wheel_RL.dae"/></geometry></visual></link>
+<joint name="wheel_RL_joint" type="${'continuous' if articulated else 'fixed'}"><parent link="steer_RL"/><child link="wheel_RL"/><origin xyz="0.0000000000 -0.0030000000 -0.2305000000"/><axis xyz="0 1 0"/></joint>
+<link name="susp_RR"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/susp_RR.dae"/></geometry></visual></link>
+<joint name="susp_RR_joint" type="fixed"><parent link="base_link"/><child link="susp_RR"/><origin xyz="0.0000000000 -0.3401480440 0.4055000000"/></joint>
+<link name="steer_RR"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/steer_RR.dae"/></geometry></visual></link>
+<joint name="steer_RR_joint" type="${'revolute' if articulated else 'fixed'}"><parent link="susp_RR"/><child link="steer_RR"/><origin xyz="0 0 0"/><axis xyz="0 0 1"/><limit lower="-1.5707963267948966" upper="1.5707963267948966" effort="1" velocity="1.0"/></joint>
+<link name="wheel_RR"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/wheel_RR.dae"/></geometry></visual></link>
+<joint name="wheel_RR_joint" type="${'continuous' if articulated else 'fixed'}"><parent link="steer_RR"/><child link="wheel_RR"/><origin xyz="0.0000000000 -0.0030000000 -0.2305000000"/><axis xyz="0 1 0"/></joint>
+<link name="payload"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/payload.dae"/></geometry></visual></link>
+<joint name="payload_joint" type="fixed"><parent link="base_link"/><child link="payload"/><origin xyz="0.60825 0 0"/></joint>
+<link name="sensor_rail"><visual><origin xyz="0 0 0"/><geometry><mesh filename="package://four_ws_vehicle_description/mesh/sensor_rail.dae"/></geometry></visual></link>
+<joint name="sensor_rail_joint" type="fixed"><parent link="base_link"/><child link="sensor_rail"/><origin xyz="0.60825 0 0"/></joint>
+</xacro:macro></robot>

@@ -1,5 +1,5 @@
 # 部署说明
-# 环境要求 ubuntu 22.04 + ros humble + cuda 12.8 + TensorRT 10.8.0.43
+# 环境要求 ubuntu 22.04 + ros humble + cuda 12.8 + TensorRT 10.8.0.43 + carla0.9.15
 
 # Install
 1. mkdir Anlorx_work
